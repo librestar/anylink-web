@@ -1,5 +1,11 @@
 # anylink-web
 
+## Repo
+
+> github: https://github.com/bjdgyc/anylink-web
+
+> gitee: https://gitee.com/bjdgyc/anylink-web
+
 ## Project setup
 ```
 npm install

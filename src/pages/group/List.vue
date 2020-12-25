@@ -291,7 +291,7 @@ export default {
         bandwidth: 0,
         status: 1,
         allow_lan: true,
-        client_dns: ['114.114.114.114'],
+        client_dns: [{val: '114.114.114.114'}],
         route_include: [],
         route_exclude: [],
         link_acl: [],

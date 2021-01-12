@@ -191,7 +191,7 @@
 
         <el-form-item label="包含路由" prop="route_include">
           <el-row class="msg-info">
-            <el-col :span="20">输入CIDR格式如: 192.168.1.0/255.255.255.0</el-col>
+            <el-col :span="20">输入CIDR格式如: 192.168.1.0/24</el-col>
             <el-col :span="4">
               <el-button size="mini" type="success" icon="el-icon-plus" circle
                          @click.prevent="addDomain(ruleForm.route_include)"></el-button>
@@ -207,7 +207,7 @@
 
         <el-form-item label="排除路由" prop="route_exclude">
           <el-row class="msg-info">
-            <el-col :span="20">输入CIDR格式如: 192.168.2.0/255.255.255.0</el-col>
+            <el-col :span="20">输入CIDR格式如: 192.168.2.0/24</el-col>
             <el-col :span="4">
               <el-button size="mini" type="success" icon="el-icon-plus" circle
                          @click.prevent="addDomain(ruleForm.route_exclude)"></el-button>
@@ -223,7 +223,7 @@
 
         <el-form-item label="权限控制" prop="link_acl">
           <el-row class="msg-info">
-            <el-col :span="20">输入CIDR格式如: 192.168.3.0/255.255.255.0 端口0表示所有端口</el-col>
+            <el-col :span="20">输入CIDR格式如: 192.168.3.0/24 端口0表示所有端口</el-col>
             <el-col :span="4">
               <el-button size="mini" type="success" icon="el-icon-plus" circle
                          @click.prevent="addDomain(ruleForm.link_acl)"></el-button>

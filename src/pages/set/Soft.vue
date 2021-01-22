@@ -7,13 +7,13 @@
         <el-table-column
             prop="info"
             label="信息"
-            width="200">
+            width="260">
         </el-table-column>
 
         <el-table-column
             prop="name"
             label="配置"
-            width="180">
+            width="200">
         </el-table-column>
 
         <el-table-column

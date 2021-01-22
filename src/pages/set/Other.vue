@@ -15,6 +15,9 @@
           <el-form-item label="密码" prop="password">
             <el-input v-model="dataSmtp.password"></el-input>
           </el-form-item>
+          <el-form-item label="启用SSL" prop="use_ssl">
+            <el-switch v-model="dataSmtp.use_ssl"></el-switch>
+          </el-form-item>
           <el-form-item label="邮件from" prop="from">
             <el-input v-model="dataSmtp.from"></el-input>
           </el-form-item>

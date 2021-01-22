@@ -83,7 +83,9 @@
             label="LINK-ACL"
             min-width="200">
           <template slot-scope="scope">
-            <el-row v-for="(item,inx) in scope.row.link_acl" :key="inx">{{ item }}</el-row>
+            <el-row v-for="(item,inx) in scope.row.link_acl" :key="inx">
+              {{ item.action }} => {{ item.val }} : {{ item.port }}
+            </el-row>
           </template>
         </el-table-column>
 
@@ -146,7 +148,7 @@
         :close-on-click-modal="false"
         title="用户组"
         :visible.sync="user_edit_dialog"
-        width="650px"
+        width="750px"
         center>
 
       <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="ruleForm">
@@ -184,8 +186,13 @@
             </el-col>
           </el-row>
           <el-row v-for="(item,index) in ruleForm.client_dns"
-                  :key="index" style="margin-bottom: 5px">
-            <el-input v-model="item.val"></el-input>
+                  :key="index" style="margin-bottom: 5px" gutter="10">
+            <el-col :span="10">
+              <el-input v-model="item.val"></el-input>
+            </el-col>
+            <el-col :span="14">
+              <el-input v-model="item.note" placeholder="备注"></el-input>
+            </el-col>
           </el-row>
         </el-form-item>
 
@@ -200,8 +207,13 @@
             </el-col>
           </el-row>
           <el-row v-for="(item,index) in ruleForm.route_include"
-                  :key="index" style="margin-bottom: 5px">
-            <el-input v-model="item.val"></el-input>
+                  :key="index" style="margin-bottom: 5px" gutter="10">
+            <el-col :span="10">
+              <el-input v-model="item.val"></el-input>
+            </el-col>
+            <el-col :span="14">
+              <el-input v-model="item.note" placeholder="备注"></el-input>
+            </el-col>
           </el-row>
         </el-form-item>
 
@@ -216,8 +228,13 @@
             </el-col>
           </el-row>
           <el-row v-for="(item,index) in ruleForm.route_exclude"
-                  :key="index" style="margin-bottom: 5px">
-            <el-input v-model="item.val"></el-input>
+                  :key="index" style="margin-bottom: 5px" gutter="10">
+            <el-col :span="10">
+              <el-input v-model="item.val"></el-input>
+            </el-col>
+            <el-col :span="14">
+              <el-input v-model="item.note" placeholder="备注"></el-input>
+            </el-col>
           </el-row>
         </el-form-item>
 
@@ -233,18 +250,20 @@
           </el-row>
 
           <el-row v-for="(item,index) in ruleForm.link_acl"
-                  :key="index" style="margin-bottom: 5px">
-            <el-col :span="19">
+                  :key="index" style="margin-bottom: 5px" gutter="5">
+            <el-col :span="11">
               <el-input placeholder="请输入CIDR地址" v-model="item.val">
-                <el-select v-model="item.action" slot="prepend" placeholder="请选择">
+                <el-select v-model="item.action" slot="prepend">
                   <el-option label="允许" value="allow"></el-option>
                   <el-option label="禁止" value="deny"></el-option>
                 </el-select>
               </el-input>
             </el-col>
-            <el-col :span="1" style="text-align: center">:</el-col>
-            <el-col :span="4">
-              <el-input v-model="item.port" placeholder="端口"></el-input>
+            <el-col :span="3">
+              <el-input v-model.number="item.port" placeholder="端口"></el-input>
+            </el-col>
+            <el-col :span="10">
+              <el-input v-model="item.note" placeholder="备注"></el-input>
             </el-col>
           </el-row>
         </el-form-item>

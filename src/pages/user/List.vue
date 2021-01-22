@@ -45,7 +45,7 @@
         <el-table-column
             prop="username"
             label="用户名"
-            width="100">
+            width="150">
         </el-table-column>
 
         <el-table-column
